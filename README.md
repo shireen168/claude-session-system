@@ -105,7 +105,7 @@ Claude will explore the codebase, write out a structured plan, and wait for your
 
 ### Phase 03: Statusline
 
-**Terminal CLI only.** The statusline does not show in the VS Code extension or JetBrains plugin. If you use an IDE extension, run Claude Code in a separate terminal window alongside it.
+**Terminal CLI only.** The statusline does not show in the VS Code extension or JetBrains plugin. If you primarily use an IDE extension, you still need to complete the setup below first - then open a separate terminal session and run `claude` there to see the statusline.
 
 The statusline shows live at the bottom of every prompt:
 
@@ -150,11 +150,11 @@ Replace `[username]` with your actual Windows username. The full snippet is in `
 
 If `~/.claude/settings.json` does not exist yet, create it with just the content above.
 
-3. **Restart Claude Code.** The statusline only activates after a full restart - not after `/compact` or starting a new conversation. Close Claude Code completely and reopen it.
+3. **Trigger an update.** Settings reload automatically - no full restart needed. The statusline appears on your next interaction with Claude Code. If it does not appear, start a fresh session.
 
 **Setup (Mac / Linux - Bash):**
 
-The statusline script in this repo is PowerShell only. For Mac/Linux, you can write a bash equivalent following the same pattern - Claude Code's statusline accepts any command that reads stdin JSON and writes a string to stdout. The [Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code/settings#status-line) covers the input schema.
+The statusline script in this repo is PowerShell only. For Mac/Linux, you can write a bash equivalent following the same pattern - Claude Code's statusline accepts any command that reads stdin JSON and writes a string to stdout. The [Claude Code documentation](https://code.claude.com/docs/en/statusline) covers the input schema and all available fields.
 
 > The fields I display (context %, 5hr limit, 7-day budget, cost, model) are what matter most to my workflow. You can strip it down to just context % if that's all you need, or add fields like session duration. The script is fully commented - adjust it.
 
